@@ -1,10 +1,10 @@
-FROM nimmis/alpine-glibc
+FROM alpine
 
-MAINTAINER nimmis <kjell.havneskold@gmail.com>
+MAINTAINER ValeCloud
 
-ENV RSLSYNC_SIZE=1000 \
-    RSLSYNC_TRASH_TIME=30 \
-    RSLSYNC_TRASH=true
+ENV RSLSYNC_SIZE=1024 \
+    RSLSYNC_TRASH_TIME=0 \
+    RSLSYNC_TRASH=false
 COPY root/. /
 
 RUN apk update && apk upgrade && \
@@ -17,5 +17,4 @@ RUN apk update && apk upgrade && \
 VOLUME /data
 
 EXPOSE 33333
-EXPOSE 8888
 
