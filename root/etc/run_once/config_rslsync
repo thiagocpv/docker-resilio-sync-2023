@@ -27,6 +27,11 @@ cat <<EOT > /etc/rslsync/rslsync.conf
 {
   "storage_path" : "/root",
   "listening_port" : 33333,
+  "ignore_mtime_assign_errors" : "true",
+  "sync_extended_attributes" : "false",
+  "send_statistics" : "false",
+  "disk_low_priority" : "true",
+  "ignore_symlinks" : "true",
   "use_upnp" : false,
   "vendor" : "docker",
   "max_file_size_for_versioning" : $RSLSYNC_SIZE,
